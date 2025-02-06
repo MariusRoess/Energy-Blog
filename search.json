@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "posts/lcoe/index.html",
+    "href": "posts/lcoe/index.html",
+    "title": "On Levelized Cost of Electricity (LCOE)",
+    "section": "",
+    "text": "The concept of LCOE is a way of determining the profitablity of an electrical powerplant.\nUnder the assumption of:\n\nall investement cost of the powerplant made in the first year\nconstant fuel cost and efficiency (also known as heatrate which is defined as the amount fuel energy that is needed to produce one unit of electrical energy)\nfixed discount rate and a limited lifetime of the plant after which it is written off\na constant amount of hours of operation in every year of the lifetime\n\nwe can determine the net present value of all of the cost.\nAt the same time we can determine the net present value of the income generated of the sale of the electricity produced for the aforementioned hours of operation at a given price p.\nThe Levelized Cost of Electricity is the price p at which the value of the cost is equal to the value of the income. That means that at this price the profitablity of the powerplant is zero, so the plant is not making a loss to the inverstor.\n\n\n\n\n    \n    \n    Levelized Cost of Electricity\n    \n    \n\n\n\n    \n\n    \n        \n            yearly hours of operation: 4000\n        \n        \n    \n\n    \n        \n            Investment Cost ($/kW): \n            Fuel cost (¢/kWh): \n            Heat rate: \n        \n    \n\n    \n        \n            Discount rate %: \n            Depreciation period in years: \n            LCOE (¢/kWh):"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "my Energy Blog",
+    "section": "",
+    "text": "This is a my Energy blog.\nI have no idea what i’m doing. I am not an energy expert, but i want to put my ideas out there.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nOn Levelized Cost of Electricity (LCOE)\n\n\n\n\n\nmy first post is on the topic of leveliced cost of electricity\n\n\n\n\n\nMay 2, 2025\n\n\nMarius Roessler\n\n\n\n\n\n\nNo matching items"
+  }
+]
