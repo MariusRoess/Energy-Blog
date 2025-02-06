@@ -2,10 +2,10 @@ const HOURS_IN_YEAR = 8760;
 const STEPSIZE = 10;
 
 const layout = {
-    title: 'Visualization',
-    xaxis: { title: 'yearly hours of operation', range: [0, HOURS_IN_YEAR] },
-    yaxis: { title: 'net present value of cost', titlefont: { color: 'red' } },
-    yaxis2: { title: 'net present value of income', titlefont: { color: 'blue' }, side: 'right', overlaying: 'y' },
+    //title: 'Visualization',
+    xaxis: { title: 'full load hours', range: [0, HOURS_IN_YEAR] },
+    yaxis: { title: 'cost', titlefont: { color: 'red' } },
+    yaxis2: { title: 'income', titlefont: { color: 'blue' }, side: 'right', overlaying: 'y' },
     showlegend: false,
     grid: { show: true },
     plot_bgcolor: '#f0f0f0'
@@ -63,8 +63,9 @@ function determine_lcoe(x) {
 function pvifa() {
     let r = parseFloat(numbDiscount.value) / 100;
     let n = parseFloat(numbDeprYear.value);
-    return (1 - Math.pow((1 + r), -n)) / r;
+    return annuity_factor(r, n);
 }
+
 
 // Event Listener 
 document.getElementById('sliderHours').addEventListener('input', updateGraph);

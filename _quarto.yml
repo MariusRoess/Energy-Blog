@@ -1,15 +1,18 @@
 project:
   type: website
   output-dir: docs
+  preview:
+    browser: false
+    port: 4321
 
 website:
-  title: "my Energy Blog"
+  title: "Marius Energy Blog"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - about.qmd
-  draft-mode: visible
+  draft-mode: unlinked
 
 format:
   html:

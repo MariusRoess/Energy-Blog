@@ -1,5 +1,5 @@
 ---
-title: "my Energy Blog"
+title: "Intro"
 listing:
     contents: posts
     sort: "date desc"
@@ -7,6 +7,7 @@ listing:
     categories: true
 ---
 
-This is a my Energy blog.
+Hi there, my name is Marius. This my blog.
 
-I have no idea what i'm doing. I am not an energy expert, but i want to put my ideas out there.
+## What I plan to do
+I am not an energy expert, but i have always been interested in the energy transition. And I have often found that certain concepts are not explained or not even discussed so I want to try to add to the discussion. I am always interested to learn new skills like websites and visualization of concepts. Maybe I will also produce Youtube to further my arguments.

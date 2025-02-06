@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>my Energy Blog</title>
+<title>Intro – Marius Energy Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -139,7 +139,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">my Energy Blog</span>
+    <span class="navbar-title">Marius Energy Blog</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -168,14 +168,20 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-i-plan-to-do" id="toc-what-i-plan-to-do" class="nav-link active" data-scroll-target="#what-i-plan-to-do">What I plan to do</a></li>
+  </ul>
+</nav>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bGNvZQ==">lcoe <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dmlzdWFsaXNhdGlvbg==">visualisation <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">my Energy Blog</h1>
+<h1 class="title">Intro</h1>
 </div>
 
 
@@ -192,15 +198,18 @@ window.Quarto = {
 </header>
 
 
-<p>This is a my Energy blog.</p>
-<p>I have no idea what i’m doing. I am not an energy expert, but i want to put my ideas out there.</p>
+<p>Hi there, my name is Marius. This my blog.</p>
+<section id="what-i-plan-to-do" class="level2">
+<h2 class="anchored" data-anchor-id="what-i-plan-to-do">What I plan to do</h2>
+<p>I am not an energy expert, but i have always been interested in the energy transition. And I have often found that certain concepts are not explained or not even discussed so I want to try to add to the discussion. I am always interested to learn new skills like websites and visualization of concepts. Maybe I will also produce Youtube to further my arguments.</p>
 
 
 
+</section>
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1746136800000" data-listing-file-modified-sort="1738852052390" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="178">
+<div class="quarto-post image-right" data-index="0" data-categories="dmlzdWFsaXNhdGlvbiUyQ2xjb2U=" data-listing-date-sort="1746136800000" data-listing-file-modified-sort="1738867873632" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1155">
 <div class="thumbnail">
 <p><a href="./posts/lcoe/index.html" class="no-external"></a></p><a href="./posts/lcoe/index.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -208,13 +217,21 @@ window.Quarto = {
 </div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/lcoe/index.html" class="no-external">On Levelized Cost of Electricity (LCOE)</a>
+<a href="./posts/lcoe/index.html" class="no-external">On Levelized Cost of Electricity</a>
 </h3>
 <div class="listing-subtitle">
 <a href="./posts/lcoe/index.html" class="no-external"></a>
 </div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('dmlzdWFsaXNhdGlvbg=='); return false;">
+visualisation
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('bGNvZQ=='); return false;">
+lcoe
+</div>
+</div>
 <div class="listing-description">
-<a href="./posts/lcoe/index.html" class="no-external">my first post is on the topic of leveliced cost of electricity</a>
+<a href="./posts/lcoe/index.html" class="no-external">my first post is on the topic of levelized cost of electricity</a>
 </div>
 </div>
 <div class="metadata">
@@ -323,7 +340,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/MariusRoess\.github\.io\/Energy-Blog\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

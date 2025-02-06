@@ -1,32 +1,105 @@
 ---
-title: "On Levelized Cost of Electricity (LCOE)"
-description: "my first post is on the topic of leveliced cost of electricity"
+title: "On Levelized Cost of Electricity"
+description: "my first post is on the topic of levelized cost of electricity"
 author: "Marius Roessler"
 date: "5/2/2025"
-draft: true
-categorie: animation
+draft: false
+categories: 
+    - visualisation
+    - lcoe
 ---
+## What is LCOE?
+LCOE is often thrown around to emphasize that certain kind of electricity producer (solar, nuclear) is preferable over others or discouraged. So which ever production method has lowest LCOE, wins. 
 
-The concept of LCOE is a way of determining the profitablity of an electrical powerplant.
+Thus LCOE calculation actually means to find the price at which the produced amount of electricity must be sold at on average under certain conditions in order to make sense. Whatever production method achieves the lowest price makes the most sense. These Conditions are:
 
-Under the assumption of:
+1. **Investment costs** and **fixed fuel costs**:
+2. Full load hours or **capacity factor**:
 
-* all investement cost of the powerplant made in the first year
-* constant fuel cost and efficiency (also known as heatrate which is defined as the amount fuel energy that is needed to produce one unit of electrical energy)
-* fixed discount rate and a limited lifetime of the plant after which it is written off
-* a constant amount of hours of operation in every year of the lifetime
+## Investment decision
 
-we can determine the net present value of all of the cost.
+So whenever we talk about building a new powerplant we have basically two kind of costs: 
 
-At the same time we can determine the net present value of the income generated of the sale of the electricity produced for the aforementioned hours of operation at a given price *p*.
+1. Huge upfront costs at the beginning of the project, the investment costs. We assume they are all made in the first year and we scale them to the unit of **kilowatt** so we divide the total investment cost by the name plate capacity (rated capacity) of the powerplant in kW.
+2. (Fixed) **recurring costs** for the operational life of the plant. For thermal powerplants that burn stuff this the usual the cost of fuel (nuclear plant burn fuel as well). We want to look at the fuel cost again scaled to kW. Then these costs are simply the full load hours (see below) times the inverse of the efficiency of the powerplant (**heat rate**) times the **price for the fuel** per kWh. 
 
-The Levelized Cost of Electricity is the price *p* at which the value of the cost is equal to the value of the income. That means that at this price the profitablity of the powerplant is zero, so the plant is not making a loss to the inverstor.
+Obviously renewable producers such as solar and wind don't come with fuel cost.
+
+Other recurring costs are staff cost, scheduled maintance and there are cost at the end of the lifetime (decommissiong costs). These are mentioned in the [wiki formula for LCOE](https://en.wikipedia.org/wiki/Levelized_cost_of_electricity#Definition) but we want to assume that they can be subsummized under investment cost and ignore them further.
+
+Though we should keep in mind the cost of pollution allowance, the infamous **CO~2~-tax**. Since the amount of CO~2~ is related to the energy content of the fuel we can easily include this in the fuel price.
+
+Additionaly every material good like a powerplant wears down over time. So we have an expected lifetime after which the investment has to be recouped by the earning of the sale of electricity.
+
+Importantly we assume that the fuel price and the sale price of electricity (lcoe) remain constant over the lifetime!
+
+## Annuity factor
+
+How do we now make the total cost (investment and recurring) comparable and how do the earnings over the lifetime factor in?
+
+- either we find the net present value of the recurring costs and add it to the investemnt costs and compare that to the net present value of the earnings
+- or we convert the investment cost to an annuity and add it to the yearly recurring costs and compare that to the yearly earnings
+
+The connector between a one time payment and a paymend of a constant amount over a predetermined time fram (fixed cash flow) is the **annuity factor**. Multiply a fixed cash flow with it and you get the net present value. Divide an initial investement amount by it and you know what amount money has to be paid yearly for the prescribed years to offset the initial costs.
 
 ```{=html}
-{{< include lcoe_split.html >}}
+    <div>
+        <div>
+            <span>Discount rate %: <input type="number" id="numDiscountGeneral" min="0" max="100" step="0.5" value="5">
+            </span>
+            <span>Years: <input type="number" id="numDeprYearsGeneral" min="1" max="100" step="1" value="20">
+            </span>
+            <span>Annuity Factor: <input type="number" id="numAnnuityFactor" max="10" readonly                disabled>
+            </span>
+        </div>
+    </div>
+    <script src="func.js"></script>
+    <script src="annuity.js"></script>
 ```
+As you play around with it you'll notice how the discount reduces the annuity factor. That is because it makes payments way out in the future less valuable.
 
+Off course this formula only works when you assuem fixed payments. So we will further assume that the fuel price and the sale price of electricity (lcoe) does not change over time, so no inflation. One way of including a fixed rate of inflation is to the reduce the discount rate, take what is known as real interest rate.
 
+## Capacity Factor
 
+ What kind of role should or can the producer play in the electricity mix? Should it produce all year round (baseload) or is it meant to only produce during hours of peak demand (peaker plants like gas). Or is production intermittent (solar, wind) and we can only roughly expect a certain to produce every year (equivalent to cacapity factor).
 
+ ## Visualization
 
+Here we see that the cost curve (red) and the income curve (blue) intersect at some amount full load hours. 
+
+```{=html}
+    <div id="graph"></div>
+
+    <div>
+        <div>
+            <span>yearly hours of operation: <span id="valueHours">4000</span></span>
+        </div>
+        <input type="range" id="sliderHours" min="0" max="8760" step="1" value="4000">
+    </div>
+
+    <div>
+        <div>
+            <span>Investment Cost ($/kW): <input type="number" id="numbInvest" min="0" max="10000" step="10"
+                    value="1000"></span>
+            <span>Fuel cost (&cent;/kWh): <input type="number" id="numbFuel" min="0" max="100" step="0.1"
+                    value="4"></span>
+            <span>Heat rate: <input type="number" id="numbHeatrate" min="1" max="20" step="0.1" value="2.3"></span>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <span>Discount rate %: <input type="number" id="numbDiscount" min="0" max="50" step="0.5" value="5"></span>
+            <span>Depreciation period in years: <input type="number" id="numbDeprYear" min="1" max="50" step="1"
+                    value="20"></span>
+            <span>LCOE (&cent;/kWh): <input type="number" id="numbLCOE" value="" min="0" max="100" readonly
+                    disabled></span>
+        </div>
+    </div>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="func.js"></script>
+    <script src="graph.js"></script>
+    
+   
+```
