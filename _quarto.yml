@@ -1,0 +1,22 @@
+project:
+  type: website
+
+website:
+  title: "my Energy Blog"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+  draft-mode: visible
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+
+

@@ -1,0 +1,12 @@
+---
+title: "my Energy Blog"
+listing:
+    contents: posts
+    sort: "date desc"
+    type: default
+    categories: true
+---
+
+This is a my Energy blog.
+
+I have no idea what i'm doing. I am not an energy expert, but i want to put my ideas out there.

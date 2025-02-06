@@ -1,0 +1,32 @@
+---
+title: "On Levelized Cost of Electricity (LCOE)"
+description: "my first post is on the topic of leveliced cost of electricity"
+author: "Marius Roessler"
+date: "5/2/2025"
+draft: true
+categorie: animation
+---
+
+The concept of LCOE is a way of determining the profitablity of an electrical powerplant.
+
+Under the assumption of:
+
+* all investement cost of the powerplant made in the first year
+* constant fuel cost and efficiency (also known as heatrate which is defined as the amount fuel energy that is needed to produce one unit of electrical energy)
+* fixed discount rate and a limited lifetime of the plant after which it is written off
+* a constant amount of hours of operation in every year of the lifetime
+
+we can determine the net present value of all of the cost.
+
+At the same time we can determine the net present value of the income generated of the sale of the electricity produced for the aforementioned hours of operation at a given price *p*.
+
+The Levelized Cost of Electricity is the price *p* at which the value of the cost is equal to the value of the income. That means that at this price the profitablity of the powerplant is zero, so the plant is not making a loss to the inverstor.
+
+```{=html}
+{{< include lcoe_split.html >}}
+```
+
+
+
+
+
